@@ -53,3 +53,15 @@ def fizzbuzz_v5(number):
         if number % key == 0:
             result += fb_dict[key]
     return result or str(number)
+
+def fizzbuzz_v6(number):
+    substitutions = [(3, 'Fizz'), (5, 'Buzz')]
+    return [''.join(s for d, s in  substitutions if number % d == 0) or str(x) for x in range(1, number + 1)]
+
+def fizzbuzz_v7(number):
+    fb_dict = {3:'Fizz', 5:'Buzz'}
+    result = str()
+    for key ,value in fb_dict.items():
+        if number % key == 0:
+            result += value
+    return result or str(number)
