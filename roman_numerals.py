@@ -10,8 +10,8 @@ import unittest
 
 def convert(number):
     roman = ''
-    arabic_numerals = [50, 10, 5, 1]
-    roman_numerals = ['L', 'X', 'V', 'I']
+    arabic_numerals = [50, 10, 5, 4, 1]
+    roman_numerals = ['L', 'X', 'V', 'IV', 'I']
     for i in range(len(arabic_numerals)):
         while number >= arabic_numerals[i]:
             roman += roman_numerals[i]
@@ -78,6 +78,9 @@ class RomanNumeralsTest(unittest.TestCase):
 
     def test_20(self):
         self.assertEqual(convert(20), 'XX')
+
+    def test_27(self):
+        self.assertEqual(convert(27), 'XXVII')
 
     def test_30(self):
         self.assertEqual(convert(30), 'XXX')
